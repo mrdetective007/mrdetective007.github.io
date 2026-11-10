@@ -1,247 +1,824 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Jeet Shah | Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Jeet Shah · Who wins inside a mind</title>
+<meta name="claude:viewport-fit-sides" content="cover" />
+<meta name="description" content="Every decision is a contest between signals. Jeet Shah studies how vision and multimodal AI decides who wins, how to read that contest from the inside, and how to stop it being rigged." />
+<link rel="canonical" href="https://mrdetective007.github.io/" />
+<meta name="author" content="Jeet Shah" />
+<meta name="theme-color" content="#e6e7e9" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#15171b" media="(prefers-color-scheme: dark)" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Jeet Shah · Every decision is a contest. I study who wins." />
+<meta property="og:description" content="Eyes against ears. Memory against the moment. Your instruction against one hidden in an image. How multimodal AI settles these conflicts, how to read it, and how to stop it being rigged." />
+<meta property="og:url" content="https://mrdetective007.github.io/" />
+<meta property="og:image" content="https://mrdetective007.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://mrdetective007.github.io/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121418'/%3E%3Ccircle cx='8' cy='8' r='3' fill='%2356B4E9'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23E69F00'/%3E%3Ccircle cx='8' cy='24' r='3' fill='%23CC79A7'/%3E%3Ccircle cx='24' cy='24' r='3' fill='%23009E73'/%3E%3Cpath d='M16 12v8M12 16h8' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Jeet Shah","url":"https://mrdetective007.github.io/","email":"jeetashah25@gmail.com",
+ "description":"Studies how vision and multimodal AI resolves conflicts between senses, memory and instructions; interpretability and security of that arbitration.",
+ "address":{"@type":"PostalAddress","addressLocality":"Sydney","addressCountry":"AU"},
+ "affiliation":[{"@type":"CollegeOrUniversity","name":"The University of Sydney"},{"@type":"Organization","name":"Pragya AI Lab, BITS Pilani Goa"}],
+ "alumniOf":[{"@type":"CollegeOrUniversity","name":"BITS Pilani"}],
+ "sameAs":["https://github.com/mrdetective007","https://www.linkedin.com/in/jeet-shah-b33267237/"]}
+</script>
+<style>
+/* Layout: a light, neutral-grey "lab" page (the calibrated grey of a vision-science
+   stimulus screen) holding one dark experiment display: the arena. Senses are coloured with
+   the Okabe-Ito palette, the colour-blind-safe set used in perception-science figures. */
+:root {
+  --bg:        #e6e7e9;
+  --surface:   #f5f5f6;
+  --surface-2: #dcdee1;
+  --ink:       #121417;
+  --ink-2:     #464b53;
+  --ink-3:     #6b717a;
+  --rule:      #cfd2d6;
+  --rule-2:    #b5bac0;
+  --link:      #005a8e;
+  --screen:    #111317;
+  --screen-ink:#e9eaec;
+  --screen-dim:#7c828b;
+  --screen-rule:#262a31;
+  --c-vision:  #56B4E9;
+  --c-sound:   #E69F00;
+  --c-memory:  #CC79A7;
+  --c-words:   #009E73;
+  --c-adv:     #D55E00;
+  --ok:        #1d7a52;
+  --bad:       #b24700;
+
+  --f-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-text:    "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono:    "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --col: 41rem;
+  --wide: 72rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#15171b; --surface:#1d2025; --surface-2:#262a30; --ink:#e8e9eb; --ink-2:#adb3bb; --ink-3:#848b95;
+    --rule:#2b2f36; --rule-2:#3b4048; --link:#7cc4ef; --screen:#0b0c0f; --screen-ink:#e9eaec; --screen-dim:#7c828b;
+    --screen-rule:#22262c; --ok:#4cc08a; --bad:#ff8a3d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#15171b; --surface:#1d2025; --surface-2:#262a30; --ink:#e8e9eb; --ink-2:#adb3bb; --ink-3:#848b95;
+  --rule:#2b2f36; --rule-2:#3b4048; --link:#7cc4ef; --screen:#0b0c0f; --screen-ink:#e9eaec; --screen-dim:#7c828b;
+  --screen-rule:#22262c; --ok:#4cc08a; --bad:#ff8a3d; color-scheme: dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-text);font-size:1.125rem;line-height:1.6;
+  font-optical-sizing:auto;text-rendering:optimizeLegibility}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:var(--link);text-underline-offset:2px;text-decoration-thickness:.07em}
+a:hover{text-decoration-thickness:.13em}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+.gut{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.wide{max-width:var(--wide);margin-inline:auto}
+.col{max-width:var(--col)}
+
+.kicker{font-family:var(--f-display);font-weight:600;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- top ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:29;background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wide{display:flex;align-items:center;gap:1rem;padding-block:.55rem}
+.brand{font-family:var(--f-display);font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.top nav{margin-left:auto;display:flex;gap:1.1rem}
+.top nav a{font-family:var(--f-display);font-weight:500;font-size:.85rem;color:var(--ink-2);text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+.ghost{appearance:none;background:transparent;border:1px solid var(--rule-2);border-radius:999px;padding:.28rem .6rem;
+  font-family:var(--f-display);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);cursor:pointer}
+.ghost:hover{color:var(--ink);border-color:var(--ink-3)}
+
+/* ---------- hero ---------- */
+main{display:flex;flex-direction:column}
+.hero{order:0;padding-block:2.6rem 1.4rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.8rem;align-items:start}
+@media (min-width:960px){.hero-grid{grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:3rem}}
+.hero h1{font-size:clamp(2.35rem,5.6vw,3.65rem);line-height:1.02;font-weight:800;letter-spacing:-.03em;margin-block:.5rem 1.1rem}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--c-sound) 45%,transparent) 62%)}
+.lede{font-size:1.2rem;line-height:1.55}
+.lede-pair{display:flex;flex-direction:column;gap:.9rem}
+.who{font-family:var(--f-display);font-size:.92rem;line-height:1.5;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:.9rem;margin-top:.4rem}
+.who b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.2rem}
+.btn{display:inline-flex;align-items:baseline;gap:.4rem;font-family:var(--f-display);font-weight:600;font-size:.86rem;
+  padding:.5rem .8rem;border-radius:6px;text-decoration:none;border:1px solid var(--rule-2);color:var(--ink);background:var(--surface)}
+.btn:hover{border-color:var(--ink-2)}
+.btn small{font-family:var(--f-mono);font-weight:400;font-size:.7rem;color:var(--ink-3)}
+.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid small{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+
+/* ---------- arena ---------- */
+.arena{background:var(--screen);color:var(--screen-ink);border-radius:14px;overflow:hidden;
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 18px 40px -24px rgba(0,0,0,.45)}
+.arena-head{display:flex;flex-wrap:wrap;gap:.45rem;padding:.8rem .8rem 0}
+.scn{appearance:none;border:1px solid var(--screen-rule);background:transparent;color:var(--screen-dim);
+  font-family:var(--f-display);font-size:.78rem;font-weight:600;padding:.34rem .62rem;border-radius:999px;cursor:pointer}
+.scn:hover{color:var(--screen-ink)}
+.scn[aria-pressed="true"]{color:var(--screen);background:var(--screen-ink);border-color:var(--screen-ink)}
+.arena-q{padding:.75rem .95rem 0;font-family:var(--f-mono);font-size:.82rem;color:var(--screen-dim)}
+.arena-q b{color:var(--screen-ink);font-weight:500}
+.stage{position:relative}
+#cv{display:block;width:100%;cursor:pointer;touch-action:manipulation}
+.arena-foot{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;padding:0 .8rem .8rem}
+.tool{appearance:none;border:1px solid var(--screen-rule);background:#ffffff08;color:var(--screen-ink);
+  font-family:var(--f-display);font-size:.78rem;font-weight:600;padding:.4rem .7rem;border-radius:6px;cursor:pointer;display:inline-flex;gap:.4rem;align-items:center}
+.tool:hover{border-color:var(--screen-dim)}
+.tool[aria-pressed="true"]{border-color:var(--screen-ink)}
+.tool .dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--screen-dim)}
+.tool[data-k="read"][aria-pressed="true"] .dot{background:var(--c-vision)}
+.tool[data-k="rig"][aria-pressed="true"] .dot{background:var(--c-adv)}
+.tool .verb{font-family:var(--f-mono);font-weight:400;font-size:.68rem;color:var(--screen-dim)}
+.senses{display:flex;gap:.3rem;margin-left:auto;flex-wrap:wrap}
+.sense{appearance:none;border:1px solid var(--screen-rule);background:transparent;color:var(--screen-ink);font-family:var(--f-mono);
+  font-size:.7rem;padding:.3rem .45rem;border-radius:5px;cursor:pointer;display:inline-flex;gap:.3rem;align-items:center}
+.sense i{width:.5rem;height:.5rem;border-radius:50%;display:inline-block}
+.sense[aria-pressed="false"]{color:var(--screen-dim);text-decoration:line-through}
+.sense[aria-pressed="false"] i{background:transparent!important;box-shadow:inset 0 0 0 1.5px var(--screen-dim)}
+.readout{border-top:1px solid var(--screen-rule);padding:.8rem .95rem .95rem;font-size:.95rem;line-height:1.5;color:var(--screen-ink);min-height:5.6rem}
+.readout .verdict{font-family:var(--f-mono);font-size:.78rem;display:block;margin-bottom:.25rem;color:var(--screen-dim)}
+.readout .verdict b{font-weight:500}
+.readout .cite{color:var(--screen-dim);font-size:.82rem}
+.readout a{color:#9fd3f2}
+.arena-note{font-family:var(--f-display);font-size:.8rem;color:var(--ink-3);margin-top:.6rem;line-height:1.45}
+
+/* ---------- lens ---------- */
+.lens{order:0;padding-block:.4rem 2rem}
+.lens .wide{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.lens-label{font-family:var(--f-display);font-size:.85rem;color:var(--ink-2);margin-right:.2rem}
+.lbtn{appearance:none;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);font-family:var(--f-display);font-weight:600;
+  font-size:.82rem;padding:.38rem .75rem;border-radius:999px;cursor:pointer}
+.lbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.lens-hint{font-family:var(--f-display);font-size:.8rem;color:var(--ink-3)}
+
+/* ---------- sections ---------- */
+.sec{padding-block:3.4rem;border-top:1px solid var(--rule)}
+.sec-head{display:flex;flex-direction:column;gap:.55rem;margin-bottom:2rem}
+.sec-head h2{font-size:clamp(1.65rem,3.6vw,2.3rem);font-weight:700;line-height:1.1;letter-spacing:-.022em}
+.sec-head p{color:var(--ink-2);max-width:var(--col)}
+#stories{order:2} #program{order:3} #shipped{order:4} #mirror{order:5} #contact{order:6}
+body[data-lens="engineer"] #shipped{order:1}
+body[data-lens="curious"] #shipped .stack{display:none}
+
+/* stories */
+.stories{display:grid;grid-template-columns:minmax(0,1fr);gap:1.1rem}
+@media (min-width:860px){.stories{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.story{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:1.3rem 1.3rem 1.2rem;display:flex;flex-direction:column;gap:.75rem}
+.story-top{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.where{font-family:var(--f-display);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.versus{display:flex;align-items:center;gap:.35rem;font-family:var(--f-mono);font-size:.74rem}
+.chip{display:inline-flex;align-items:center;gap:.3rem;padding:.16rem .45rem;border-radius:999px;border:1px solid var(--rule-2);color:var(--ink-2);white-space:nowrap}
+.chip i{width:.48rem;height:.48rem;border-radius:50%;display:inline-block}
+.chip.won{color:var(--ink);border-color:var(--ink-2);font-weight:500}
+.chip.won::after{content:"won";font-size:.62rem;color:var(--bad);margin-left:.15rem;letter-spacing:.03em}
+.vs{color:var(--ink-3)}
+.story h3{font-size:1.3rem;font-weight:700;line-height:1.2}
+.story .tell{font-size:1.05rem}
+.story .lesson{font-family:var(--f-text);font-style:italic;font-size:1.08rem;color:var(--ink);border-left:3px solid var(--rule-2);padding-left:.75rem}
+.story .did{font-family:var(--f-display);font-size:.88rem;line-height:1.5;color:var(--ink-2);border-top:1px dashed var(--rule-2);padding-top:.7rem;margin-top:auto}
+.story .did b{color:var(--ink);font-weight:600}
+.n{font-family:var(--f-mono);font-size:.84rem;color:var(--ink);font-weight:500;white-space:nowrap}
+
+/* program */
+.prog{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+.p-row{display:grid;grid-template-columns:minmax(0,1fr);gap:.45rem 1.6rem;padding-block:1.4rem;border-bottom:1px solid var(--rule)}
+@media (min-width:860px){.p-row{grid-template-columns:9.5rem minmax(0,1fr) 15rem}}
+.status{font-family:var(--f-mono);font-size:.74rem;display:inline-flex;align-items:center;gap:.4rem;color:var(--ink-2);height:fit-content;padding-top:.3rem}
+.status i{width:.55rem;height:.55rem;border-radius:50%;border:1.5px solid var(--ink-3)}
+.status[data-s="live"] i{background:var(--ok);border-color:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 22%,transparent)}
+.status[data-s="next"] i{background:var(--c-sound);border-color:var(--c-sound)}
+.p-main h3{font-size:1.28rem;font-weight:700;margin-bottom:.35rem}
+.p-main p{color:var(--ink-2)}
+.p-main p b{color:var(--ink);font-weight:600}
+.p-side{font-family:var(--f-display);font-size:.82rem;color:var(--ink-3);line-height:1.5;padding-top:.3rem}
+.p-side b{display:block;color:var(--ink-2);font-weight:600;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem}
+.senses-row{display:flex;gap:.25rem;margin-top:.5rem}
+.senses-row i{width:.6rem;height:.6rem;border-radius:2px;display:inline-block}
+.principles{display:grid;grid-template-columns:minmax(0,1fr);gap:.9rem;margin-top:2rem}
+@media (min-width:760px){.principles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.principles li{font-family:var(--f-display);font-size:.9rem;line-height:1.5;color:var(--ink-2);border-top:2px solid var(--ink);padding-top:.6rem}
+.principles li b{display:block;color:var(--ink);font-size:1rem;margin-bottom:.15rem}
+
+/* shipped */
+.ship{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--rule)}
+@media (min-width:760px){.ship{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2.4rem}}
+.ship li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.15rem 1rem;padding-block:.95rem;border-bottom:1px solid var(--rule)}
+.ship .t{font-family:var(--f-display);font-weight:600;font-size:.98rem;line-height:1.35}
+.ship .m{font-family:var(--f-mono);font-size:.8rem;color:var(--ink);text-align:right;white-space:nowrap}
+.ship .d{grid-column:1 / -1;font-family:var(--f-display);font-size:.85rem;color:var(--ink-3);line-height:1.45}
+.ship .stack{grid-column:1 / -1;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3)}
+
+/* mirror */
+.mirror-box{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:1.3rem;max-width:46rem}
+.bars{display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
+.bar{display:grid;grid-template-columns:8.5rem minmax(0,1fr) 3.4rem;gap:.7rem;align-items:center;font-family:var(--f-display);font-size:.84rem}
+.bar .track{height:.6rem;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;width:0;background:var(--ink-3);border-radius:999px;transition:width .5s ease}
+.bar.lead .fill{background:var(--c-sound)}
+.bar.lead .lab{font-weight:700}
+.bar .sec-t{font-family:var(--f-mono);font-size:.76rem;color:var(--ink-3);text-align:right}
+.mirror-verdict{font-family:var(--f-display);font-size:.95rem;margin-top:1rem;color:var(--ink-2)}
+.mirror-verdict b{color:var(--ink)}
+.fine{font-family:var(--f-display);font-size:.78rem;color:var(--ink-3);margin-top:.7rem}
+
+/* contact */
+.ask{font-size:1.35rem;line-height:1.45;max-width:38rem}
+.ask [data-for]{display:none}
+body[data-lens="researcher"] .ask [data-for="researcher"],
+body[data-lens="engineer"] .ask [data-for="engineer"],
+body[data-lens="curious"] .ask [data-for="curious"]{display:inline}
+.mail{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:1.4rem}
+.addr{font-family:var(--f-mono);font-size:1rem;background:var(--surface);border:1px solid var(--rule-2);border-radius:6px;padding:.45rem .7rem;user-select:all;word-break:break-all}
+footer{border-top:1px solid var(--rule);padding-block:1.6rem 2.6rem}
+.foot{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-family:var(--f-display);font-size:.78rem;color:var(--ink-3)}
+
+@media (max-width:620px){
+  .top nav a.opt{display:none}
+  .senses{margin-left:0;width:100%}
+  .bar{grid-template-columns:6.6rem minmax(0,1fr) 3rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.top,.lens,.arena-foot,.arena-head,#mirror{display:none!important}body{background:#fff}}
+</style>
 </head>
-<body class="is-preload">
+<body data-lens="researcher">
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+<header class="top">
+  <div class="wide gut">
+    <a class="brand" href="#">Jeet Shah</a>
+    <nav aria-label="Sections">
+      <a href="#stories">Stories</a>
+      <a href="#program">Now</a>
+      <a href="#shipped" class="opt">Built</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="ghost" id="themeBtn" type="button">Theme</button>
+  </div>
+</header>
 
-        <!-- Header -->
-        <header id="header">
-            <div class="logo">
-                <span class="icon fa-user"></span>
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero" data-attn="The arena" aria-labelledby="h1">
+    <div class="wide gut hero-grid">
+      <div class="lede-pair">
+        <p class="kicker">Perception · decisions · interpretability · security</p>
+        <h1 id="h1">Every decision is a contest. I study <em>who wins.</em></h1>
+        <p class="lede">Eyes against ears. Memory against the moment. Your instruction against one hidden
+          inside an image. Minds and models settle these conflicts constantly, mostly out of sight.</p>
+        <p class="lede">I work on how vision and multimodal AI settles them, how to read the result
+          from the inside, and how to stop someone from rigging it.</p>
+        <p class="who"><b>Jeet Shah</b>, Sydney. Master of Computer Science at the University of Sydney,
+          research contributor at Pragya AI Lab, and two and a half years building in-car audio and
+          perception systems at Aptiv.</p>
+        <div class="cta">
+          <a class="btn solid" href="#program">What I'm working on</a>
+          <a class="btn" href="Jeet_Shah_CV.pdf">CV <small>PDF</small></a>
+          <a class="btn" href="https://github.com/mrdetective007">GitHub</a>
+        </div>
+      </div>
+
+      <div>
+        <figure class="arena" style="margin:0" aria-labelledby="arenaCap">
+          <div class="arena-head" role="group" aria-label="Choose a contest">
+            <button class="scn" data-scn="yawn" aria-pressed="true" type="button">The yawn</button>
+            <button class="scn" data-scn="banana" aria-pressed="false" type="button">The blue banana</button>
+            <button class="scn" data-scn="fine" aria-pressed="false" type="button">"I'm fine"</button>
+            <button class="scn" data-scn="inject" aria-pressed="false" type="button">Hidden instruction</button>
+          </div>
+          <p class="arena-q" id="arenaQ">Question: <b>Is the driver tired?</b></p>
+          <div class="stage">
+            <canvas id="cv" role="img" aria-label="Animated race: four senses send evidence toward a shared workspace in the centre; the first to reach threshold wins."></canvas>
+          </div>
+          <div class="arena-foot">
+            <button class="tool" data-k="read" aria-pressed="false" type="button"><span class="dot"></span>Look inside <span class="verb">interpret</span></button>
+            <button class="tool" data-k="rig" aria-pressed="false" type="button"><span class="dot"></span>Rig it <span class="verb">attack</span></button>
+            <div class="senses" role="group" aria-label="Silence a sense">
+              <button class="sense" data-src="vision" aria-pressed="true" type="button"><i style="background:var(--c-vision)"></i>vision</button>
+              <button class="sense" data-src="sound" aria-pressed="true" type="button"><i style="background:var(--c-sound)"></i>sound</button>
+              <button class="sense" data-src="memory" aria-pressed="true" type="button"><i style="background:var(--c-memory)"></i>memory</button>
+              <button class="sense" data-src="words" aria-pressed="true" type="button"><i style="background:var(--c-words)"></i>words</button>
             </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Jeet Shah</h1>
-                    <p>Innovative Software Engineer with a Data-Driven Mindset<br />
-						Crafting Scalable AI Systems | Passionate About ML/DNN/NLP, Embedded Intelligence, and Human-Centered Tech</p>						
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+          </div>
+          <div class="readout" id="arenaCap" aria-live="polite">
+            <span class="verdict" id="verdict">running…</span>
+            <span id="note">A loud, fast yawn reaches the workspace first. The camera disagrees, but it is slower.</span>
+          </div>
+        </figure>
+        <p class="arena-note">This is a race model, the same idea psychologists use for human choices. Each sense
+          sends evidence toward a shared workspace; the first to reach threshold wins and is broadcast to
+          everything else. Tap a sense to silence it.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Main -->
-        <div id="main">
+  <!-- ================= LENS ================= -->
+  <div class="lens" aria-label="Choose how to read this page">
+    <div class="wide gut">
+      <span class="lens-label">Reading as</span>
+      <button class="lbtn" data-lens="researcher" aria-pressed="true" type="button">a researcher</button>
+      <button class="lbtn" data-lens="engineer" aria-pressed="false" type="button">an engineer or recruiter</button>
+      <button class="lbtn" data-lens="curious" aria-pressed="false" type="button">just curious</button>
+      <span class="lens-hint" id="lensHint">The page reorders for you.</span>
+    </div>
+  </div>
 
-            <!-- About -->
-            <article id="about">
-                <h2 class="major">About Me</h2>
-                <h4 style="margin-top: -1rem; font-weight: normal; color: #999;">
-                    Applied ML, Edge Intelligence & Systems Design That Shapes the Future
-                </h4>
-                <p><strong>👋 Hey, I’m Jeet Shah</strong> — a passionate software engineer who blends low-level systems with high-level intelligence. Currently at <strong>APTIV</strong>, I design emotion-aware in-car tech using embedded AI, DSP, and deep learning.</p>
+  <!-- ================= STORIES ================= -->
+  <section class="sec" id="stories" data-attn="Four stories" aria-labelledby="h-stories">
+    <div class="wide gut">
+      <div class="sec-head">
+        <p class="kicker">Where I've met it</p>
+        <h2 id="h-stories">Four times I watched the wrong side win</h2>
+        <p>Different jobs, different data, the same failure. Each one is why I now care more about how a
+          decision is reached than about the accuracy of any single part.</p>
+      </div>
 
-                <hr />
+      <div class="stories">
+        <article class="story">
+          <div class="story-top">
+            <span class="where">Aptiv · inside the car</span>
+            <span class="versus"><span class="chip won"><i style="background:var(--c-sound)"></i>voice</span><span class="vs">vs</span><span class="chip"><i style="background:var(--c-vision)"></i>face</span></span>
+          </div>
+          <h3>The yawn</h3>
+          <p class="tell">A cabin monitor heard a yawn and flagged a tired driver. The camera showed someone
+            upright and talking animatedly. The voice reached the decision first, so the voice won.</p>
+          <p class="lesson">Fast evidence is not the same as good evidence.</p>
+          <p class="did"><b>What I built:</b> real-time speech emotion models (<span class="n">85%</span> on IEMOCAP),
+            an adaptive soundscape that responds in under <span class="n">100 ms</span>, and the Android Automotive
+            audio stack they ran on.</p>
+        </article>
 
-                <p><strong>⚙️ What I Do:</strong><br />
-                I work at the intersection of <em>signal processing, machine learning, and edge deployment</em>. I’ve led cross-functional projects using <strong>CNN-LSTMs, Transformers, and VAE architectures</strong> — always optimized for <strong>latency</strong>, <strong>efficiency</strong>, and <strong>scalability</strong>.</p>
+        <article class="story">
+          <div class="story-top">
+            <span class="where">BITS Pilani · wearables</span>
+            <span class="versus"><span class="chip won"><i style="background:var(--c-memory)"></i>prior</span><span class="vs">vs</span><span class="chip"><i style="background:var(--c-sound)"></i>signal</span></span>
+          </div>
+          <h3>The heart or the noise</h3>
+          <p class="tell">In wearable ECG data, the outliers were bending the very statistics meant to catch
+            them. The model's idea of "normal" kept winning arguments it should have lost.</p>
+          <p class="lesson">A prior can be corrupted by the thing it is meant to detect.</p>
+          <p class="did"><b>What I built:</b> a robust distance, ARMD, that beat classical Mahalanobis by
+            <span class="n">25%</span>, and an LSTM autoencoder that separates four kinds of temporal anomaly.
+            <a href="https://github.com/mrdetective007/UnderGrad_Research">Code</a>.</p>
+        </article>
 
-                <hr />
+        <article class="story">
+          <div class="story-top">
+            <span class="where">L&amp;T · engineering diagrams</span>
+            <span class="versus"><span class="chip won"><i style="background:var(--c-words)"></i>text</span><span class="vs">vs</span><span class="chip"><i style="background:var(--c-vision)"></i>geometry</span></span>
+          </div>
+          <h3>The valve that moved</h3>
+          <p class="tell">On a piping diagram, a label a few millimetres out of place changes what the plant
+            does. The OCR read every word correctly and still misread the diagram.</p>
+          <p class="lesson">Every part can be right while the whole is wrong.</p>
+          <p class="did"><b>What I built:</b> a detection and OCR pipeline that beat template matching by
+            <span class="n">15–20%</span>, then linked symbols to meaning, cutting human classification errors by
+            about <span class="n">30%</span>.</p>
+        </article>
 
-                <p><strong>🧠 Driven by Curiosity:</strong><br />
-                From anomaly detection using robust statistics to building NLP pipelines from scratch, I love solving real-world problems with measurable impact.</p>
+        <article class="story">
+          <div class="story-top">
+            <span class="where">Pragya AI Lab · robots</span>
+            <span class="versus"><span class="chip won"><i style="background:var(--c-words)"></i>English</span><span class="vs">vs</span><span class="chip"><i style="background:var(--c-memory)"></i>Hindi, Tamil…</span></span>
+          </div>
+          <h3>The instruction that arrived empty</h3>
+          <p class="tell">Two different Hindi instructions can reach a motion model as the same sequence of
+            tokens. The English-shaped interface wins before the contest even starts, and the robot moves the
+            same way for both.</p>
+          <p class="lesson">Sometimes the loser is erased before anyone votes.</p>
+          <p class="did"><b>What I'm building:</b> alignment of Hindi, Bengali, Tamil and Telugu embeddings
+            directly into the space a humanoid motion model listens to, so instructions never pass through
+            English.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-                <hr />
-            </article>
+  <!-- ================= PROGRAM ================= -->
+  <section class="sec" id="program" data-attn="What I'm doing" aria-labelledby="h-program">
+    <div class="wide gut">
+      <div class="sec-head">
+        <p class="kicker">What I'm doing about it</p>
+        <h2 id="h-program">Four open questions, worked on in public</h2>
+        <p>Each one asks who wins a particular contest inside a model, and why. Dates are commitments.
+          When something finishes, or fails, it gets written up here.</p>
+      </div>
 
-            <!-- Education -->
-            <article id="education">
-                <h2 class="major">Education</h2>
-                <h4 style="margin-top: -1rem; font-weight: normal; color: #999;">
-                    B.E. Computer Science • Minor in Data Science • CGPA: 8.20/10
-                </h4>
-            
-                <p><strong>Birla Institute of Technology and Science (BITS), Pilani</strong><br/>
-                <em>Nov 2020 – July 2024</em> &nbsp; | &nbsp; Pilani, India</p>
-            
-                <hr />
-            
-                <p><strong>Key Coursework:</strong><br/>
-                Machine Learning, Artificial Intelligence, Data Mining, Data Structures & Algorithms, Operating Systems, OOP, Computer Networks, Probability & Statistics, Signal Processing, Foundations of Data Science.</p>
-            
-                <p><strong>Academic Focus:</strong><br/>
-                Strong emphasis on core systems, real-time data pipelines, and applied ML across domains like embedded intelligence and predictive analytics.</p>
-            </article>
-            
-
-            <!-- Experience -->
-            <article id="experience">
-                <h2 class="major">Experience</h2>
-            
-                <!-- APTIV -->
-                <div class="experience-entry left">
-                    <h3 style="margin-bottom: 0.2rem;"><strong>Senior Software Engineer</strong></h3>
-                    <p style="margin: 0; color: #888;"><em>APTIV Components India | Jan 2024 – Present</em></p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Engineered an adaptive soundscape system using <strong>VAE architectures</strong> — achieved <strong>30% reduction</strong> in perceptual repetition and improved naturalness by 20%.</li>
-                        <li>Led development of an in-car <strong>emotion detection system</strong> using <strong>MFCCs, CNN-LSTM</strong>, and <strong>Vision Transformers</strong>; optimized for edge with <strong>&lt;150ms latency</strong> and 85% accuracy.</li>
-                        <li>Extended <strong>Audio HAL</strong> with AIDL for low-latency routing, ALSA integration, and multi-zone playback on AAOS.</li>
-                        <li>Built <strong>gRPC-based dynamic audio focus</strong> manager for seamless inter-OS communication across media/navigation/alerts.</li>
-                    </ul>
-                </div>
-            
-                <!-- L&T -->
-                <div class="experience-entry right">
-                    <h3 style="margin-bottom: 0.2rem;"><strong>Data Science Intern</strong></h3>
-                    <p style="margin: 0; color: #888;"><em>L&T Technology Services | May 2023 – July 2023</em></p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Automated <strong>P&ID symbol detection</strong> using <strong>PyTorch, MMOCR, and OpenCV</strong>; increased accuracy by 20%.</li>
-                        <li>Extracted product semantics from noisy text descriptions, cutting manual classification error by nearly <strong>30%</strong>.</li>
-                    </ul>
-                </div>
-            
-                <!-- BITS -->
-                <div class="experience-entry left">
-                    <h3 style="margin-bottom: 0.2rem;"><strong>Undergraduate Researcher</strong></h3>
-                    <p style="margin: 0; color: #888;"><em>BITS Pilani, Hyderabad | Sept 2022 – Dec 2023</em></p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Proposed and developed the <strong>Alternative Robust Mahalanobis Distance (ARMD)</strong> for anomaly detection — improved precision by 25% over traditional methods.</li>
-                        <li>Designed and trained an <strong>LSTM Autoencoder</strong> to classify 4 distinct ECG anomalies across 144-timestamp windows.</li>
-                    </ul>
-                </div>
-            </article>
-            
-
-            <!-- Projects -->
-            <article id="projects">
-                <h2 class="major">Projects</h2>
-
-                <!-- OptiRoute Project -->
-                <div class="experience-entry left">
-                    <h3><strong>OptiRoute: TSP Algorithm Analyser</strong></h3>
-                    <p style="color: #888; margin-bottom: 1rem;">Visualized and compared 7 optimization algorithms (GA, SA, PSO, etc.) to solve the Traveling Salesman Problem (TSP).</p>
-                    <p><strong>Tech Stack:</strong> Python, Matplotlib, Numpy, SciPy</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li><a href="https://github.com/mrdetective007/Optiroute_TSP_Algorithm_Analyser" target="_blank">GitHub Link</a></li>
-                    </ul>
-                </div>
-
-                <!-- Amazon Sentiment Analysis Project -->
-                <div class="experience-entry right">
-                    <h3><strong>Amazon Review Sentiment Analysis</strong></h3>
-                    <p style="color: #888; margin-bottom: 1rem;">Performed sentiment classification on 3.6M Amazon reviews using a custom Naive Bayes model with NLP preprocessing techniques.</p>
-                    <p><strong>Tech Stack:</strong> Python, NLTK, Scikit-learn, Pandas, Matplotlib</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li><a href="https://github.com/mrdetective007/Amazon_Product_Review_Sentiment_Analysis" target="_blank">GitHub Link</a></li>
-                    </ul>
-                </div>
-
-                <!-- Chrome Extension Project -->
-                <div class="experience-entry left">
-                    <h3><strong>Chrome Extension: BPHC</strong></h3>
-                    <p style="color: #888; margin-bottom: 1rem;">Developed a Chrome extension for efficient access to BPHC resources, improving user workflow.</p>
-                    <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Chrome API</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li><a href="https://github.com/mrdetective007/Chrome_Extension_BPHC" target="_blank">GitHub Link</a></li>
-                    </ul>
-                </div>
-
-                <!-- NanoGen Project -->
-                <div class="experience-entry right">
-                    <h3><strong>NanoGen: Mini C Compiler</strong></h3>
-                    <p style="color: #888; margin-bottom: 1rem;">Built a lightweight C compiler that translates C code into an intermediate form for educational purposes.</p>
-                    <p><strong>Tech Stack:</strong> C, Lex, Yacc, GCC</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li><a href="https://github.com/mrdetective007/NanoGen_Mini_C_Compiler" target="_blank">GitHub Link</a></li>
-                    </ul>
-                </div>
-
-                <!-- StyleMart Project -->
-                <div class="experience-entry left">
-                    <h3><strong>StyleMart</strong></h3>
-                    <p style="color: #888; margin-bottom: 1rem;">Developed a full-stack e-commerce platform with personalized styling recommendations and user authentication.</p>
-                    <p><strong>Tech Stack:</strong> React, Node.js, Express, MongoDB, Bootstrap</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li><a href="https://github.com/mrdetective007/StyleMart" target="_blank">GitHub Link</a></li>
-                    </ul>
-                </div>
-
-            </article>
-
-
-            <!-- Skills -->
-            <article id="skills">
-                <h2 class="major">Skills</h2>
-                <ul>
-                    <li><strong>Languages:</strong> Python, C/C++, Java, SQL, JavaScript, HTML/CSS</li>
-                    <li><strong>Frameworks:</strong> React, Node.js, Docker</li>
-                    <li><strong>Libraries:</strong> PyTorch, TensorFlow, Keras, Scikit-learn, Hugging Face</li>
-                    <li><strong>Tools:</strong> Git, VS Code, Eclipse, IntelliJ</li>
-                    <li><strong>Certifications:</strong> Embedded Linux Audio - Bootlin</li>
-                </ul>
-            </article>
-
-            <!-- Contact -->
-            <article id="contact">
-                <h2 class="major">Contact</h2>
-                <ul class="icons">
-                    <!-- Email -->
-                    <li>
-                        <a href="mailto:jeetashah25@gmail.com" class="icon solid fa-envelope">
-                            <span class="label">Email</span>
-                        </a>
-                    </li>
-            
-                    <!-- Phone -->
-                    <li>
-                        <a href="tel:+91-9998976965" class="icon solid fa-phone">
-                            <span class="label">Phone</span>
-                        </a>
-                    </li>
-                    
-                    <!-- LinkedIn -->
-                    <li>
-                        <a href="https://www.linkedin.com/in/jeet-shah-b33267237/" class="icon brands fa-linkedin" target="_blank">
-                            <span class="label">LinkedIn</span>
-                        </a>
-                    </li>
-            
-                    <!-- GitHub -->
-                    <li>
-                        <a href="https://github.com/mrdetective007" class="icon brands fa-github" target="_blank">
-                            <span class="label">GitHub</span>
-                        </a>
-                    </li>
-            
-                    <!-- LeetCode -->
-                    <li>
-                        <a href="https://leetcode.com/mrdetective007/" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" style="height: 1.5em; vertical-align: middle; filter: brightness(0) invert(1);">
-                        </a>
-                    </li>                    
-                </ul>
-            </article>            
-
+      <div class="prog">
+        <div class="p-row">
+          <span class="status" data-s="live"><i></i>ongoing</span>
+          <div class="p-main">
+            <h3>Language that arrives empty</h3>
+            <p>Can instructions in Indian languages drive a robot directly, without English as a middleman?
+              At Pragya AI Lab I map multilingual text representations into the conditioning space of a
+              pretrained humanoid motion model.</p>
+            <div class="senses-row" aria-hidden="true"><i style="background:var(--c-words)"></i><i style="background:var(--c-memory)"></i></div>
+          </div>
+          <p class="p-side"><b>Contest</b>English interface vs Indic meaning<br>PragyaVLA codebase, Hugging Face demos</p>
         </div>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Jeet Shah.</p>
-        </footer>
+        <div class="p-row">
+          <span class="status" data-s="next"><i></i>from Dec 2026</span>
+          <div class="p-main">
+            <h3>Tone against words</h3>
+            <p>When the words say "I'm fine" and the voice says otherwise, audio language models usually believe
+              the words. A 2026 KAIST study traced where that bias lives for literal speech in English, and left
+              <b>tone, emotion and other languages</b> open. I'm mapping it for tone of voice across English,
+              Hindi and Tamil, with open models.</p>
+            <div class="senses-row" aria-hidden="true"><i style="background:var(--c-sound)"></i><i style="background:var(--c-words)"></i></div>
+          </div>
+          <p class="p-side"><b>Will release</b>open conflict set · notebooks · short paper</p>
+        </div>
 
+        <div class="p-row">
+          <span class="status"><i></i>early 2027</span>
+          <div class="p-main">
+            <h3>Does the past outvote the present?</h3>
+            <p>Video models lean hard on early frames. I want to measure how much contrary evidence it takes to
+              change their mind, and whether a sequential-sampling model, the kind used for human choices,
+              predicts when they finally switch.</p>
+            <div class="senses-row" aria-hidden="true"><i style="background:var(--c-vision)"></i><i style="background:var(--c-memory)"></i></div>
+          </div>
+          <p class="p-side"><b>Contest</b>memory vs the current frame<br>vision · decision theory</p>
+        </div>
+
+        <div class="p-row">
+          <span class="status"><i></i>early 2027</span>
+          <div class="p-main">
+            <h3>Who holds the pen?</h3>
+            <p>Text hidden inside an image competes with the user's own instruction. I'm testing whether an
+              injected instruction's win is visible inside the model before it answers, including when the
+              injection is written in an Indian script that English-tuned filters were never shown.</p>
+            <div class="senses-row" aria-hidden="true"><i style="background:var(--c-adv)"></i><i style="background:var(--c-words)"></i></div>
+          </div>
+          <p class="p-side"><b>Contest</b>your instruction vs a planted one<br>security · interpretability</p>
+        </div>
+      </div>
+
+      <ul class="principles">
+        <li><b>Open by default.</b>Data, code and the experiments that fail go public. A result nobody can
+          check is a rumour.</li>
+        <li><b>Small and sharp first.</b>A clean experiment on one open model beats a vague claim about all
+          of them.</li>
+        <li><b>Read it, then trust it.</b>If I can't show where inside the model a decision was made, I
+          don't claim to know why it was made.</li>
+      </ul>
     </div>
+  </section>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+  <!-- ================= SHIPPED ================= -->
+  <section class="sec" id="shipped" data-attn="What I built" aria-labelledby="h-shipped">
+    <div class="wide gut">
+      <div class="sec-head">
+        <p class="kicker">Things that shipped or ran</p>
+        <h2 id="h-shipped">I also build the systems these ideas live in</h2>
+        <p>Research that can't run on real hardware, at real latency, stays a slide. This is the engineering
+          underneath.</p>
+      </div>
+      <ul class="ship">
+        <li><span class="t">Android Automotive audio, in production</span><span class="m">Aptiv</span>
+          <span class="d">Audio and AudioControl HAL extensions, multizone routing, mmap paths, dynamic focus across media, navigation and alerts.</span>
+          <span class="stack">C++ · Java · AIDL · AAOS · ALSA</span></li>
+        <li><span class="t">Health monitoring for Android–Linux services</span><span class="m">40% faster</span>
+          <span class="d">Heartbeat diagnostics across distributed services; failure detection time cut 40% in system testing.</span>
+          <span class="stack">gRPC · C++ · embedded Linux</span></li>
+        <li><span class="t">Real-time speech emotion</span><span class="m">85% IEMOCAP</span>
+          <span class="d">Mel and MFCC features into CNN, LSTM and Audio Spectrogram Transformer models.</span>
+          <span class="stack">PyTorch · audio ML</span></li>
+        <li><span class="t">Adaptive soundscape</span><span class="m">&lt;100 ms</span>
+          <span class="d">VAE-generated audio about 20% more natural than static loops, on embedded and cloud.</span>
+          <span class="stack">VAE · real-time inference</span></li>
+        <li><span class="t">Reading engineering diagrams</span><span class="m">+15–20%</span>
+          <span class="d">Two-stage detection and OCR over overlapping crops, against template-matching baselines.</span>
+          <span class="stack">EAST · MMOCR · OpenCV</span></li>
+        <li><span class="t">Robust anomaly detection (ARMD)</span><span class="m">+25%</span>
+          <span class="d">Physiological signals; improvement over classical Mahalanobis distance.</span>
+          <span class="stack">scikit-learn · Keras · TensorFlow</span></li>
+        <li><span class="t">NanoGen, a small C compiler</span><span class="m"><a href="https://github.com/mrdetective007/NanoGen_Mini_C_Compiler">code</a></span>
+          <span class="d">Lexing, parsing, semantic analysis, symbol tables, intermediate code.</span>
+          <span class="stack">C · Lex · Yacc</span></li>
+        <li><span class="t">OptiRoute, seven ways to solve TSP</span><span class="m"><a href="https://github.com/mrdetective007/Optiroute_TSP_Algorithm_Analyser">code</a></span>
+          <span class="d">GA, simulated annealing, PSO and others compared on search behaviour and convergence.</span>
+          <span class="stack">Python · optimisation</span></li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- ================= MIRROR ================= -->
+  <section class="sec" id="mirror" data-attn="This box" aria-labelledby="h-mirror">
+    <div class="wide gut">
+      <div class="sec-head">
+        <p class="kicker">Meanwhile, on this page</p>
+        <h2 id="h-mirror">This page ran the same contest on you</h2>
+        <p>Every section has been competing for your attention since you arrived. Here is the race so far.
+          It is measured in your browser and never leaves it.</p>
+      </div>
+      <div class="mirror-box">
+        <div class="bars" id="bars"></div>
+        <p class="mirror-verdict" id="mirrorVerdict">Scroll a little and the race begins.</p>
+        <p class="fine">Counts seconds while at least half of a section is on screen and this tab is in front.
+          No cookies, no analytics, nothing sent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="sec" id="contact" data-attn="Contact" aria-labelledby="h-contact">
+    <div class="wide gut">
+      <div class="sec-head">
+        <p class="kicker">Get in touch</p>
+        <h2 id="h-contact">Tell me where I'm wrong</h2>
+      </div>
+      <p class="ask">
+        <span data-for="researcher">I'm looking for research internships, a supervisor, and collaborators on how
+          multimodal models arbitrate, and how to read and defend that. If one of these questions is yours too,
+          I'd like to compare notes.</span>
+        <span data-for="engineer">I'm open to ML and software engineering roles in Sydney or remote, especially
+          where perception models meet production systems with real latency budgets.</span>
+        <span data-for="curious">If the yawn or the blue banana made you think of a better example, I'd like to
+          hear it.</span>
+      </p>
+      <div class="mail">
+        <span class="addr" id="addr">jeetashah25@gmail.com</span>
+        <button class="ghost" id="copyBtn" type="button">Copy</button>
+        <a class="btn" href="https://www.linkedin.com/in/jeet-shah-b33267237/">LinkedIn</a>
+        <a class="btn" href="https://github.com/mrdetective007">GitHub</a>
+        <a class="btn" href="Jeet_Shah_CV.pdf">Research CV <small>PDF</small></a>
+        <a class="btn" href="Jeet_Shah_Engineering_Resume.pdf">Engineering resume <small>PDF</small></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wide gut foot">
+    <span>Jeet Shah · Sydney</span>
+    <span>Updated November 2026</span>
+    <span>Built by hand. The arena runs entirely in your browser.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var root=document.documentElement, body=document.body;
+var RM=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null;}}
+
+/* ---------------- theme ---------------- */
+var saved=store("theme"); if(saved==="dark"||saved==="light") root.setAttribute("data-theme",saved);
+document.getElementById("themeBtn").addEventListener("click",function(){
+  var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);
+  var n=dark?"light":"dark"; root.setAttribute("data-theme",n); store("theme",n); readColors();
+});
+
+/* ---------------- lens ---------------- */
+var hints={researcher:"Stories and open questions first.",engineer:"What I've shipped moves to the top.",curious:"Stories first, technical detail trimmed."};
+function setLens(l){
+  body.setAttribute("data-lens",l);
+  document.querySelectorAll(".lbtn").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lens===l));});
+  document.getElementById("lensHint").textContent=hints[l];
+  store("lens",l);
+}
+document.querySelectorAll(".lbtn").forEach(function(b){b.addEventListener("click",function(){setLens(b.dataset.lens);});});
+var sl=store("lens"); if(sl&&hints[sl]) setLens(sl);
+
+/* ---------------- copy ---------------- */
+var cb=document.getElementById("copyBtn"), ad=document.getElementById("addr");
+cb.addEventListener("click",function(){
+  function sel(){var r=document.createRange();r.selectNodeContents(ad);var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent="Selected";setTimeout(function(){cb.textContent="Copy";},1800);}
+  try{navigator.clipboard.writeText(ad.textContent.trim()).then(function(){cb.textContent="Copied";setTimeout(function(){cb.textContent="Copy";},1600);},sel);}catch(e){sel();}
+});
+
+/* ================= ARENA ================= */
+var SRC=["vision","sound","memory","words"];
+var LABEL={vision:"vision",sound:"sound",memory:"memory",words:"words",adv:"attacker"};
+var SCN={
+  yawn:{q:"Is the driver tired?",truth:"vision",
+    claim:{vision:"alert, talking",sound:"tired",memory:"slept well",words:"(chatting)"},
+    rate:{vision:0.95,sound:1.45,memory:0.32,words:0},adv:"brake now",
+    note:{def:"A loud, fast yawn reaches the workspace first. The camera disagrees, but it is slower.",
+          right:"With the voice silenced, the camera's slower evidence finally wins. Same scene, different winner.",
+          rig:"An attacker injects a louder signal. Nothing about the driver changed."}},
+  banana:{q:"What colour is this banana?",truth:"vision",
+    claim:{vision:"blue",sound:"",memory:"yellow",words:"“banana”"},
+    rate:{vision:1.0,sound:0,memory:1.38,words:0.22},adv:"red",
+    note:{def:"The image is a blue banana. Models usually still say yellow, even though the blue is encoded inside them. The seeing works; the arbitration fails.",
+          right:"Silence memory and vision wins. The colour was available all along.",
+          rig:"An attacker adds a third answer and it outruns both."},
+    cite:'Nooralahzadeh et al., 2026, <a href="https://arxiv.org/abs/2604.09364">arXiv 2604.09364</a>'},
+  fine:{q:"How does the speaker feel?",truth:"sound",
+    claim:{vision:"",sound:"shaky, distressed",memory:"",words:"“I'm fine”"},
+    rate:{vision:0,sound:0.95,memory:0.18,words:1.42},adv:"angry",
+    note:{def:"The words say “I'm fine”. The voice is shaking. Audio models tend to believe the words. Nobody has mapped where that happens for tone of voice, or in Indian languages. That is my next study.",
+          right:"Silence the words and the voice is heard. Now try to get the same answer without silencing anything.",
+          rig:"An attacker plants a third reading of the voice. It wins on volume alone."},
+    cite:'Builds on Cho et al., KAIST, 2026, <a href="https://arxiv.org/abs/2606.18924">arXiv 2606.18924</a>'},
+  inject:{q:"Summarise this receipt.",truth:"words",
+    claim:{vision:"receipt, $42.10",sound:"",memory:"receipts list items",words:"summarise it"},
+    rate:{vision:0.62,sound:0,memory:0.3,words:1.2},adv:"“approved”",
+    note:{def:"Right now your instruction wins. Press “Rig it”: the receipt will carry hidden text telling the model to say “approved”.",
+          right:"Your instruction wins. Press “Rig it” to plant one in the image.",
+          rig:"Text hidden in the image now outruns your instruction. Can we see this happening inside the model before it answers? That is the security question."}}
+};
+
+var cv=document.getElementById("cv"), ctx=cv.getContext("2d");
+var W=0,H=0,DPR=1, C={}, scn="yawn", muted={}, rig=false, read=false;
+var acc={}, credit={}, parts=[], phase="run", winner=null, holdT=0, rounds=0, touched=false, t0=0, ripple=0;
+var TH=16, nodes={}, visible=true;
+
+function readColors(){
+  var cs=getComputedStyle(root);
+  ["vision","sound","memory","words"].forEach(function(k){C[k]=cs.getPropertyValue("--c-"+k).trim();});
+  C.adv=cs.getPropertyValue("--c-adv").trim();
+  C.ink=cs.getPropertyValue("--screen-ink").trim(); C.dim=cs.getPropertyValue("--screen-dim").trim();
+  C.rule=cs.getPropertyValue("--screen-rule").trim(); C.bg=cs.getPropertyValue("--screen").trim();
+  if(RM) drawStatic();
+}
+function layout(){
+  var w=cv.clientWidth||520; var h=Math.round(Math.max(340,Math.min(w*0.8,470)));
+  DPR=Math.min(window.devicePixelRatio||1,2); W=w; H=h;
+  cv.width=Math.round(w*DPR); cv.height=Math.round(h*DPR); cv.style.height=h+"px";
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  var cx=W/2, cy=H/2+4, rx=Math.min(W/2-64,250), ry=Math.min(H/2-66,170);
+  nodes={vision:{x:cx-rx,y:cy-ry},sound:{x:cx+rx,y:cy-ry},memory:{x:cx-rx,y:cy+ry},words:{x:cx+rx,y:cy+ry},adv:{x:cx,y:cy-ry},c:{x:cx,y:cy}};
+  if(RM) drawStatic();
+}
+function active(){var s=SCN[scn],out=[];SRC.forEach(function(k){if(!muted[k]&&s.rate[k]>0)out.push(k);});if(rig)out.push("adv");return out;}
+function rateOf(k){return k==="adv"?1.95:SCN[scn].rate[k];}
+function claimOf(k){return k==="adv"?SCN[scn].adv:SCN[scn].claim[k];}
+function reset(){acc={};credit={};SRC.concat(["adv"]).forEach(function(k){acc[k]=0;credit[k]=Math.random()*0.6;});parts=[];phase="run";winner=null;holdT=0;ripple=0;setVerdict(null);}
+function predicted(){var a=active(),b=null;a.forEach(function(k){if(!b||rateOf(k)>rateOf(b))b=k;});return b;}
+
+function noteFor(w){
+  var s=SCN[scn];
+  if(w==="adv") return s.note.rig;
+  if(w===s.truth) return Object.keys(muted).some(function(k){return muted[k];})?s.note.right:(scn==="inject"?s.note.right:s.note.right);
+  return s.note.def;
+}
+var vEl=document.getElementById("verdict"), nEl=document.getElementById("note"), qEl=document.getElementById("arenaQ");
+function setVerdict(w){
+  var s=SCN[scn];
+  if(!w){
+    var off=SRC.filter(function(k){return muted[k];});
+    vEl.innerHTML="running…";
+    nEl.innerHTML=(rig?"An attacker has joined the race.":off.length?"Re-running without "+off.join(" and ")+".":s.note.def)+(s.cite?' <span class="cite">'+s.cite+'</span>':'');
+    return;}
+  var ok=w===s.truth;
+  vEl.innerHTML='winner: <b style="color:'+C[w]+'">'+LABEL[w]+'</b> → “'+claimOf(w).replace(/[“”]/g,"")+'” · '+(ok?'<b style="color:#6fd6a3">right call</b>':'<b style="color:#ff9b5c">wrong call</b>');
+  nEl.innerHTML=(ok&&w!=="adv"?s.note.right:(w==="adv"?s.note.rig:s.note.def))+(s.cite?' <span class="cite">'+s.cite+'</span>':'');
+}
+
+function spawn(k){
+  var a=nodes[k], c=nodes.c, ang=Math.atan2(c.y-a.y,c.x-a.x)+(Math.random()-0.5)*1.1, d=Math.hypot(c.x-a.x,c.y-a.y);
+  parts.push({k:k,sx:a.x,sy:a.y,mx:a.x+Math.cos(ang)*d*0.5,my:a.y+Math.sin(ang)*d*0.5,t:0,dur:0.85+Math.random()*0.35});
+}
+function step(dt){
+  if(phase==="run"){
+    active().forEach(function(k){credit[k]+=rateOf(k)*dt*9;while(credit[k]>=1){credit[k]-=1;spawn(k);}});
+  }
+  for(var i=parts.length-1;i>=0;i--){var p=parts[i];p.t+=dt/p.dur;
+    if(p.t>=1){parts.splice(i,1); if(phase==="run"){acc[p.k]++; if(acc[p.k]>=TH){phase="won";winner=p.k;holdT=0;ripple=0;setVerdict(winner);}}}}
+  if(phase==="won"){holdT+=dt;ripple+=dt;
+    if(holdT>3.2){rounds++; if(!touched&&rounds>=2){var ks=Object.keys(SCN);selectScn(ks[(ks.indexOf(scn)+1)%ks.length],false);} else reset();}}
+}
+function bez(p){var u=1-p.t;return{x:u*u*p.sx+2*u*p.t*p.mx+p.t*p.t*nodes.c.x,y:u*u*p.sy+2*u*p.t*p.my+p.t*p.t*nodes.c.y};}
+function lead(){var a=active().slice().sort(function(x,y){return acc[y]-acc[x];});return a;}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  var c=nodes.c, s=SCN[scn], mono='12px "IBM Plex Mono", ui-monospace, monospace';
+  // workspace rings + fixation cross
+  ctx.strokeStyle=C.rule; ctx.lineWidth=1;
+  [26,46].forEach(function(r){ctx.beginPath();ctx.arc(c.x,c.y,r,0,Math.PI*2);ctx.stroke();});
+  var L=lead(), lk=L[0];
+  if(lk&&acc[lk]>0){ctx.strokeStyle=C[lk];ctx.globalAlpha=0.9;ctx.lineWidth=3;ctx.beginPath();
+    ctx.arc(c.x,c.y,26,-Math.PI/2,-Math.PI/2+Math.PI*2*Math.min(1,acc[lk]/TH));ctx.stroke();ctx.globalAlpha=1;}
+  ctx.strokeStyle=C.ink; ctx.lineWidth=1.6; ctx.beginPath(); ctx.moveTo(c.x-6,c.y);ctx.lineTo(c.x+6,c.y);ctx.moveTo(c.x,c.y-6);ctx.lineTo(c.x,c.y+6);ctx.stroke();
+  // ripple (broadcast)
+  if(phase==="won"&&winner){var R=26+ripple*Math.max(W,H)*0.55;ctx.strokeStyle=C[winner];ctx.globalAlpha=Math.max(0,1-ripple/1.4)*0.8;ctx.lineWidth=2;
+    ctx.beginPath();ctx.arc(c.x,c.y,R,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1;}
+  // particles
+  for(var i=0;i<parts.length;i++){var p=parts[i],q=bez(p);ctx.fillStyle=C[p.k];ctx.globalAlpha=0.35+0.65*p.t;ctx.beginPath();ctx.arc(q.x,q.y,2.6,0,Math.PI*2);ctx.fill();}
+  ctx.globalAlpha=1;
+  // nodes
+  var keys=SRC.concat(rig?["adv"]:[]);
+  keys.forEach(function(k){
+    var n=nodes[k], used=k==="adv"||s.rate[k]>0, off=muted[k], col=C[k];
+    var tint=phase==="won"&&winner&&!off&&used&&ripple>0.25;
+    ctx.globalAlpha=(!used||off)?0.35:1;
+    ctx.beginPath();ctx.arc(n.x,n.y,13,0,Math.PI*2);
+    if(off){ctx.strokeStyle=C.dim;ctx.lineWidth=1.5;ctx.stroke();ctx.beginPath();ctx.moveTo(n.x-9,n.y-9);ctx.lineTo(n.x+9,n.y+9);ctx.stroke();}
+    else{ctx.fillStyle=col;ctx.fill(); if(tint){ctx.strokeStyle=C[winner];ctx.lineWidth=3;ctx.beginPath();ctx.arc(n.x,n.y,18,0,Math.PI*2);ctx.stroke();}}
+    // accumulator arc
+    if(used&&!off){ctx.strokeStyle=col;ctx.lineWidth=2;ctx.globalAlpha=0.9;ctx.beginPath();ctx.arc(n.x,n.y,21,-Math.PI/2,-Math.PI/2+Math.PI*2*Math.min(1,acc[k]/TH));ctx.stroke();}
+    ctx.globalAlpha=(!used||off)?0.45:1;
+    var top=n.y<c.y, lab=LABEL[k]+(read&&used&&!off?"  "+acc[k]+"/"+TH:""), cl=used?claimOf(k):"idle";
+    ctx.textAlign="center"; ctx.font='600 12px "Schibsted Grotesk", Arial, sans-serif'; ctx.fillStyle=C.ink;
+    var ly=top?n.y-30:n.y+38;
+    function fx(t){var hw=ctx.measureText(t).width/2;return Math.max(hw+6,Math.min(W-hw-6,n.x));}
+    ctx.fillText(lab,fx(lab),ly);
+    ctx.font=mono; ctx.fillStyle=C.dim; var ct=cl?("“"+cl.replace(/[“”]/g,"")+"”"):""; ctx.fillText(ct,fx(ct),ly+(top?-15:15));
+    ctx.globalAlpha=1;
+  });
+  // centre label
+  ctx.textAlign="center";
+  if(phase==="won"&&winner){ctx.font='700 15px "Schibsted Grotesk", Arial, sans-serif';ctx.fillStyle=C[winner];
+    ctx.fillText(claimOf(winner).replace(/[“”]/g,""),c.x,c.y+66);}
+  else{ctx.font=mono;ctx.fillStyle=C.dim;ctx.fillText("workspace",c.x,c.y+66);}
+  // read-out margin (interpretability)
+  if(read&&L.length>1){var m=acc[L[0]]-acc[L[1]];ctx.font=mono;ctx.fillStyle=C.ink;ctx.textAlign="center";
+    ctx.fillText(LABEL[L[0]]+" leads "+LABEL[L[1]]+" by "+m,c.x,c.y+88);}
+}
+function drawStatic(){
+  if(!W) return; reset(); var w=predicted(); active().forEach(function(k){acc[k]=w===k?TH:Math.round(TH*rateOf(k)/rateOf(w));});
+  phase="won"; winner=w; ripple=2; setVerdict(w); draw();
+}
+var last=0;
+function loop(ts){ if(!last) last=ts; var dt=Math.min(0.05,(ts-last)/1000); last=ts;
+  if(visible&&!document.hidden){step(dt);draw();} requestAnimationFrame(loop);}
+
+function selectScn(k,byUser){
+  scn=k; if(byUser){touched=true;} rounds=0; muted={};
+  document.querySelectorAll(".scn").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.scn===k));});
+  document.querySelectorAll(".sense").forEach(function(b){b.setAttribute("aria-pressed","true");});
+  qEl.innerHTML='Question: <b>'+SCN[k].q+'</b>';
+  if(RM) drawStatic(); else reset();
+}
+document.querySelectorAll(".scn").forEach(function(b){b.addEventListener("click",function(){selectScn(b.dataset.scn,true);});});
+function toggleSense(k){touched=true;muted[k]=!muted[k];
+  document.querySelector('.sense[data-src="'+k+'"]').setAttribute("aria-pressed",String(!muted[k]));
+  if(RM) drawStatic(); else reset();}
+document.querySelectorAll(".sense").forEach(function(b){b.addEventListener("click",function(){toggleSense(b.dataset.src);});});
+document.querySelectorAll(".tool").forEach(function(b){b.addEventListener("click",function(){
+  touched=true; var on=b.getAttribute("aria-pressed")!=="true"; b.setAttribute("aria-pressed",String(on));
+  if(b.dataset.k==="rig"){rig=on; if(RM) drawStatic(); else reset();} else {read=on; if(RM) draw();}
+});});
+cv.addEventListener("click",function(e){var r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  SRC.forEach(function(k){var n=nodes[k];if(Math.hypot(n.x-x,n.y-y)<28)toggleSense(k);});});
+
+readColors(); layout(); reset();
+if("ResizeObserver" in window){new ResizeObserver(function(){layout();}).observe(cv);} else addEventListener("resize",layout);
+if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;},{threshold:0}).observe(cv);}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){if(RM)drawStatic();});}
+if(RM){drawStatic();} else {draw(); requestAnimationFrame(loop);}
+
+/* ================= ATTENTION MIRROR ================= */
+var secs=[].slice.call(document.querySelectorAll("[data-attn]")), dwell={}, vis={};
+secs.forEach(function(s){dwell[s.dataset.attn]=0;});
+var bars=document.getElementById("bars"), mv=document.getElementById("mirrorVerdict"), rows={};
+secs.forEach(function(s){var n=s.dataset.attn,d=document.createElement("div");d.className="bar";
+  d.innerHTML='<span class="lab"></span><span class="track"><span class="fill"></span></span><span class="sec-t">0s</span>';
+  d.querySelector(".lab").textContent=n; bars.appendChild(d); rows[n]=d;});
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var big=e.target.offsetHeight>innerHeight*1.1;
+    vis[e.target.dataset.attn]=big?e.intersectionRect.height>innerHeight*0.5:e.intersectionRatio>=0.5;});},
+    {threshold:[0,0.25,0.5,0.75,1]});
+  secs.forEach(function(s){io.observe(s);});
+}
+setInterval(function(){
+  if(document.hidden) return;
+  Object.keys(vis).forEach(function(n){if(vis[n])dwell[n]+=0.5;});
+},500);
+setInterval(function(){
+  var names=Object.keys(dwell), max=Math.max.apply(null,names.map(function(n){return dwell[n];}).concat([1])), top=null;
+  names.forEach(function(n){if(!top||dwell[n]>dwell[top])top=n;});
+  names.forEach(function(n){var r=rows[n];r.querySelector(".fill").style.width=(100*dwell[n]/max)+"%";
+    r.querySelector(".sec-t").textContent=Math.round(dwell[n])+"s";r.classList.toggle("lead",n===top&&dwell[n]>0);});
+  var total=names.reduce(function(a,n){return a+dwell[n];},0);
+  if(total<3){mv.textContent="Scroll a little and the race begins.";return;}
+  var msg={"The arena":"The arena is winning. Fair: moving things win attention fast. That is exactly the bias the yawn exploited.",
+    "Four stories":"The stories are winning. Concrete cases beat abstract claims; brains are built that way.",
+    "What I'm doing":"The open questions are winning. That is the section I most hoped would.",
+    "What I built":"The engineering is winning. Good: the research only matters if it runs.",
+    "This box":"This box is winning, which means you are reading about the race instead of running it. Very meta.",
+    "Contact":"Contact is winning. The email address is right there."};
+  mv.innerHTML="<b>Winner so far: "+top+".</b> "+(msg[top]||"");
+},1000);
+})();
+</script>
 </body>
 </html>
